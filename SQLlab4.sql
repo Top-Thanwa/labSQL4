@@ -23,5 +23,13 @@ select ProductID, ProductName, CompanyName, Country
 from Products P, Suppliers S
 where p.SupplierID=s.SupplierID
 
-select 
-from Orders, Shippers
+select CompanyName, OrderID
+from Orders O, Shippers S
+where S.ShipperID=O.ShipVia
+and OrderID=10275
+
+select CompanyName, OrderID
+from Orders O join Shippers S
+on S.ShipperID=O.ShipVia
+where OrderID=10275
+
